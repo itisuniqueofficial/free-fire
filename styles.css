@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 40px 20px;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.1));
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header img {
+    width: 130px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.header img:hover {
+    transform: scale(1.06);
+}
+
+.header h1 {
+    font-size: 36px;
+    color: #ff4d4d;
+    margin: 15px 0 5px;
+    font-weight: 700;
+}
+
+.header p {
+    color: #b0b0d0;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.screenshot-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 40px 0;
+    border-radius: 15px;
+}
+
+.screenshot-track {
+    display: flex;
+    animation: autoScroll 30s linear infinite;
+}
+
+.screenshot {
+    flex: 0 0 300px;
+    height: 200px;
+    margin-right: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.screenshot:hover {
+    transform: scale(1.05);
+}
+
+@keyframes autoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.section {
+    margin: 40px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section h2 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.changelog ul, .about ul {
+    list-style: none;
+}
+
+.changelog li, .about li {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.changelog li strong {
+    color: #00b3ff;
+    font-weight: 600;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature-item {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.feature-item i {
+    color: #00b3ff;
+    margin-right: 10px;
+}
+
+.download-section {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.download-btn {
+    padding: 15px 50px;
+    background: linear-gradient(90deg, #ff4d4d, #ff6666);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 77, 77, 0.4);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.6);
+}
+
+.download-btn:active {
+    transform: translateY(2px);
+}
+
+.progress-bar {
+    width: 0;
+    height: 5px;
+    background: #00b3ff;
+    border-radius: 5px;
+    margin: 15px auto;
+    max-width: 350px;
+    transition: width 0.4s ease;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #b0b0d0;
+}
+
+.stats span {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #b0b0d0;
+}
+
+.footer a {
+    color: #00b3ff;
+    text-decoration: none;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff4d4d;
+}
+
+@media (max-width: 600px) {
+    .container { padding: 25px; }
+    .header h1 { font-size: 28px; }
+    .header img { width: 110px; }
+    .download-btn { padding: 12px 40px; font-size: 16px; }
+    .screenshot { flex: 0 0 200px; height: 150px; }
+    .section h2 { font-size: 22px; }
+    .features-grid { grid-template-columns: 1fr; }
+}
